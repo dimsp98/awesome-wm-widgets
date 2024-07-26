@@ -111,8 +111,8 @@ local function worker(user_args)
             timeout = 25, -- show the warning for a longer time
             hover_timeout = 0.5,
             position = warning_msg_position,
-            bg = "#F06060",
-            fg = "#EEE9EF",
+            bg = "#f38ba8",
+            fg = "#fafafa",
             width = 300,
             screen = mouse.screen
         }
