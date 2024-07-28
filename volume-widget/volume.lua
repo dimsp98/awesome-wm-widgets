@@ -17,10 +17,10 @@ local utils = require("awesome-wm-widgets.volume-widget.utils")
 
 local LIST_DEVICES_CMD = [[sh -c "pactl list-sinks; pactl list-sources"]]
 local function GET_VOLUME_CMD(card, device, mixctrl, value_type)
-	return "amixer -c " .. card .. " -D " .. device .. " sget " .. mixctrl .. " " .. value_type
+	return "pamixer -c " .. card .. " -D " .. device .. " sget " .. mixctrl .. " " .. value_type
 end
 local function INC_VOLUME_CMD(card, device, mixctrl, value_type, step)
-	return "amixer -c "
+	return "pamixer -c "
 		.. card
 		.. " -D "
 		.. device
@@ -33,7 +33,7 @@ local function INC_VOLUME_CMD(card, device, mixctrl, value_type, step)
 		.. "%+"
 end -- luacheck: ignore
 local function DEC_VOLUME_CMD(card, device, mixctrl, value_type, step)
-	return "amixer -c "
+	return "pamixer -c "
 		.. card
 		.. " -D "
 		.. device
@@ -46,7 +46,7 @@ local function DEC_VOLUME_CMD(card, device, mixctrl, value_type, step)
 		.. "%-"
 end -- luacheck: ignore
 local function TOG_VOLUME_CMD(card, device, mixctrl)
-	return "amixer -c " .. card .. " -D " .. device .. " sset " .. mixctrl .. " toggle"
+	return "pamixer -c " .. card .. " -D " .. device .. " sset " .. mixctrl .. " toggle"
 end -- luacheck: ignore
 
 local widget_types = {
